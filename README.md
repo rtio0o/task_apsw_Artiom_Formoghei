@@ -64,6 +64,32 @@ npm run build
 
 Priority choices are All priorities, Low, Medium and High. Search, status and priority work together. The footer shows the matching count, and an empty result shows No tasks found.
 
+## Code structure
+
+- `src/App.jsx` connects the routes and shared layout data.
+- `src/pages/` loads API data and keeps page state and save/delete handlers.
+- `src/components/layout/` contains the sidebar and topbar.
+- `src/components/dashboard/` contains the welcome banner, statistics, recent tasks and progress card.
+- `src/components/tasks/` contains the filters, table, table row, task overview and action buttons.
+- `src/components/projects/` contains the project card and project task list.
+- `TaskForm`, the badges, `WorkspaceDate` and `ProgressBar` are shared components.
+
+Pages pass data and event handlers to the components through props. This keeps API requests and page state separate from the larger blocks of markup.
+
+JavaScript, JSX and CSS use the same formatting settings from `.prettierrc.json`.
+
+Check formatting:
+
+```bash
+npx --yes prettier@3.6.2 --check src .prettierrc.json
+```
+
+Apply formatting:
+
+```bash
+npx --yes prettier@3.6.2 --write src .prettierrc.json
+```
+
 ## GitHub work
 
 Repository: [rtio0o/task_apsw_Artiom_Formoghei](https://github.com/rtio0o/task_apsw_Artiom_Formoghei).

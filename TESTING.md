@@ -72,6 +72,17 @@ Checked with the 7 sample tasks and 3 temporary tasks:
 - The seven original tasks and three projects match the original db.json. The original file contents were restored after the empty-state check.
 - Temporary test data, the temporary API address, node_modules and dist are not included in the commits.
 
+## Readability and component cleanup
+
+- Formatted JavaScript, JSX and CSS with Prettier using `.prettierrc.json`.
+- Added 14 components for layout, dashboard sections, task views, project views and the shared progress bar. Pages keep API loading, filter state and save/delete handlers.
+- Compared all six pages before and after the cleanup. Headings, links, buttons, initial form values, task rows and progress styles matched.
+- Checked that the CSS selectors, declaration values and their order were preserved after formatting.
+- Checked that API logic and the original sample data were unchanged.
+- Rechecked the priority controls: All = 7, Low = 2, Medium = 2, High = 3. Search and status together still return the correct task; the empty state and reset work.
+- Rechecked the project default, spaces-only title validation on create and edit, and the Cancel links.
+- `npm run build`, `npx --yes prettier@3.6.2 --check src .prettierrc.json` and `git diff --check` passed.
+
 ## Limits of these checks
 
 These are manual browser checks. No automated test suite is configured. Cancelling the delete confirmation and the date changing at midnight were not tested.
