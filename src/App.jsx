@@ -8,6 +8,7 @@ import Projects from './pages/Projects'
 import ProjectDetails from './pages/ProjectDetails'
 import NewTask from './pages/NewTask'
 import { api } from './api'
+import WorkspaceDate from './components/WorkspaceDate'
 
 export default function App() {
   const [projects, setProjects] = useState([])
@@ -82,7 +83,7 @@ export default function App() {
         {apiError && <div className="api-warning">Could not connect to the local API. Start it with <code>npm run api</code>.</div>}
         <header className="topbar">
           <div className="breadcrumbs"><span>Workspace</span><span className="crumb-slash">/</span><strong>My workspace</strong></div>
-          <div className="topbar-actions"><span className="today-label">Thursday, October 15</span><div className="top-avatar">DP</div></div>
+          <div className="topbar-actions"><span className="today-label"><WorkspaceDate /></span><div className="top-avatar">DP</div></div>
         </header>
         <div className="page-wrap">
           <Routes>

@@ -24,7 +24,7 @@ I checked the app in the browser and used the REST API through the app. The star
 | 07: Sidebar task count stays at seven | [#7](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/7) | Fixed and checked |
 | 08: Changing a task project breaks its project link | [#8](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/8) | Fixed and checked |
 | 09: Add task forgets the current project | [#9](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/9) | Fixed and checked |
-| 10: Dashboard and header show a fixed date | [#10](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/10) | Open |
+| 10: Dashboard and header show a fixed date | [#10](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/10) | Fixed and checked |
 
 ### Bug 01: Dashboard View all opens the wrong page
 
@@ -113,8 +113,8 @@ I checked the app in the browser and used the REST API through the app. The star
 - Steps: Open or reload the app on October 16, 2026.
 - Before: The header and dashboard still show Thursday, October 15.
 - Expected: Both should show the current local date.
-- Fix: Not applied yet.
-- Test: Not checked after a fix yet.
+- Fix: Format the current date in English instead of keeping a fixed string.
+- Test: Passed in the desktop browser after reload: the header shows Friday, October 16 and the dashboard shows Friday, October 16, 2026. Both use the local date.
 
 ## Other assignment work
 
