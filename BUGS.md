@@ -17,7 +17,7 @@ I checked the app in the browser and used the REST API through the app. The star
 | --- | --- | --- |
 | 01: Dashboard View all opens the wrong page | [#1](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/1) | Fixed and checked |
 | 02: Dashboard shows zero tasks in progress | [#2](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/2) | Fixed and checked |
-| 03: In progress filter hides matching tasks | [#3](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/3) | Open |
+| 03: In progress filter hides matching tasks | [#3](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/3) | Fixed and checked |
 | 04: Searching for a person depends on letter case | [#4](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/4) | Open |
 | 05: View project opens the dashboard | [#5](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/5) | Open |
 | 06: A task title can contain only spaces | [#6](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/6) | Open |
@@ -50,8 +50,8 @@ I checked the app in the browser and used the REST API through the app. The star
 - Steps: Open Tasks and select In progress in the status filter.
 - Before: No tasks found is shown.
 - Expected: The two tasks with status In progress should be listed.
-- Fix: Not applied yet.
-- Test: Not checked after a fix yet.
+- Fix: Compare the selected status directly with the task status.
+- Test: Passed in the browser: In progress lists Audit UX and Raport saptamanal; the footer shows 2 of 7 tasks.
 
 ### Bug 04: Searching for a person depends on letter case
 
