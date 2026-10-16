@@ -19,7 +19,7 @@ I checked the app in the browser and used the REST API through the app. The star
 | 02: Dashboard shows zero tasks in progress | [#2](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/2) | Fixed and checked |
 | 03: In progress filter hides matching tasks | [#3](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/3) | Fixed and checked |
 | 04: Searching for a person depends on letter case | [#4](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/4) | Fixed and checked |
-| 05: View project opens the dashboard | [#5](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/5) | Open |
+| 05: View project opens the dashboard | [#5](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/5) | Fixed and checked |
 | 06: A task title can contain only spaces | [#6](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/6) | Open |
 | 07: Sidebar task count stays at seven | [#7](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/7) | Open |
 | 08: Changing a task project breaks its project link | [#8](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/8) | Open |
@@ -68,8 +68,8 @@ I checked the app in the browser and used the REST API through the app. The star
 - Steps: Open Projects and click View project on Website redesign.
 - Before: The link goes to /project/1 and returns to the dashboard.
 - Expected: The project page should open at /projects/1.
-- Fix: Not applied yet.
-- Test: Not checked after a fix yet.
+- Fix: Use the existing /projects/:id route.
+- Test: Passed in the browser: all three View project links open the matching /projects/ID page. All projects returns to the list.
 
 ### Bug 06: A task title can contain only spaces
 
