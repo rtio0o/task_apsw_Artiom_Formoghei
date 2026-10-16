@@ -18,7 +18,7 @@ I checked the app in the browser and used the REST API through the app. The star
 | 01: Dashboard View all opens the wrong page | [#1](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/1) | Fixed and checked |
 | 02: Dashboard shows zero tasks in progress | [#2](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/2) | Fixed and checked |
 | 03: In progress filter hides matching tasks | [#3](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/3) | Fixed and checked |
-| 04: Searching for a person depends on letter case | [#4](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/4) | Open |
+| 04: Searching for a person depends on letter case | [#4](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/4) | Fixed and checked |
 | 05: View project opens the dashboard | [#5](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/5) | Open |
 | 06: A task title can contain only spaces | [#6](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/6) | Open |
 | 07: Sidebar task count stays at seven | [#7](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/7) | Open |
@@ -59,8 +59,8 @@ I checked the app in the browser and used the REST API through the app. The star
 - Steps: Search for Ana, then change the search to ana.
 - Before: Ana finds two tasks, but ana finds none.
 - Expected: Both searches should find the same tasks.
-- Fix: Not applied yet.
-- Test: Not checked after a fix yet.
+- Fix: Use lower case for the search text and the assignee name.
+- Test: Passed in the browser: Ana, ana, ANA and extra spaces each return 2 tasks. Adding Done returns 1 task.
 
 ### Bug 05: View project opens the dashboard
 
