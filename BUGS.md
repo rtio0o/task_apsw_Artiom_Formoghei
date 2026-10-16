@@ -23,7 +23,7 @@ I checked the app in the browser and used the REST API through the app. The star
 | 06: A task title can contain only spaces | [#6](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/6) | Fixed and checked |
 | 07: Sidebar task count stays at seven | [#7](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/7) | Fixed and checked |
 | 08: Changing a task project breaks its project link | [#8](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/8) | Fixed and checked |
-| 09: Add task forgets the current project | [#9](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/9) | Open |
+| 09: Add task forgets the current project | [#9](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/9) | Fixed and checked |
 | 10: Dashboard and header show a fixed date | [#10](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/10) | Open |
 
 ### Bug 01: Dashboard View all opens the wrong page
@@ -104,8 +104,8 @@ I checked the app in the browser and used the REST API through the app. The star
 - Steps: Open Mobile app launch and click Add task.
 - Before: The form selects Website redesign.
 - Expected: Mobile app launch should be selected.
-- Fix: Not applied yet.
-- Test: Not checked after a fix yet.
+- Fix: Pass the project ID to the new task page and use it in the form.
+- Test: Passed in the browser: Add task preselects the correct project for all three loaded project pages. A task created from Marketing campaign appears in that project.
 
 ### Bug 10: Dashboard and header show a fixed date
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import TaskForm from '../components/TaskForm'
 import { api } from '../api'
@@ -8,6 +8,8 @@ export default function NewTask() {
   const [projects, setProjects] = useState([])
   const [error, setError] = useState('')
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const projectId = searchParams.get('projectId') || '1'
 
   useEffect(() => { api.getProjects().then(setProjects).catch(() => setError('Could not load projects.')) }, [])
 
@@ -20,5 +22,5 @@ export default function NewTask() {
     }
   }
 
-  return <div className="page-content narrow-page"><SectionHeading eyebrow="TASK MANAGEMENT" title="Create a task" description="Break your next big idea into a clear, actionable step." />{error && <div className="form-error">{error}</div>}<TaskForm projects={projects} onSubmit={createTask} submitLabel="Create task" /></div>
+  return <div className="page-content narrow-page"><SectionHeading eyebrow="TASK MANAGEMENT" title="Create a task" description="Break your next big idea into a clear, actionable step." />{error && <div className="form-error">{error}</div>}<TaskForm initialValues={{ projectId }} projects={projects} onSubmit={createTask} submitLabel="Create task" /></div>
 }
