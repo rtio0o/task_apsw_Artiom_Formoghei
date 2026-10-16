@@ -26,6 +26,7 @@ I checked the app in the browser and used the REST API through the app. The star
 | 09: Add task forgets the current project | [#9](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/9) | Fixed and checked |
 | 10: Dashboard and header show a fixed date | [#10](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/10) | Fixed and checked |
 | 11: Deleting a task returns to the dashboard | [#12](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/12) | Fixed and checked |
+| 12: Dashboard and Projects do not handle API failures | [#13](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/13) | Fixed and checked |
 
 ### Bug 01: Dashboard View all opens the wrong page
 
@@ -125,6 +126,15 @@ I checked the app in the browser and used the REST API through the app. The star
 - Expected: Return to /tasks after deletion.
 - Fix: Change the destination after successful deletion to /tasks.
 - Test: Passed in the browser: deleted the two remaining approved test tasks. Each deletion returned to /tasks and updated the sidebar and list. Reload shows the 7 original tasks.
+
+### Bug 12: Dashboard and Projects do not handle API failures
+
+- Issue: [#13](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/13)
+- Steps: Make the API unavailable, then open Dashboard and Projects. The check used an unused local API port.
+- Before: Both pages show empty data and leave uncaught Failed to fetch errors in the console.
+- Expected: Show a loading error and catch the failed request.
+- Fix: Add an error state, catch request failures and show an alert on both pages.
+- Test: Passed in the browser: both pages show loading error messages with the API unavailable. After restoring localhost:3001 and reloading, Dashboard shows 7 tasks and Projects shows 3 projects. The temporary API URL was not committed.
 
 ## Other assignment work
 

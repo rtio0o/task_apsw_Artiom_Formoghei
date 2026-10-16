@@ -11,12 +11,16 @@ export default function Dashboard() {
   const [tasks, setTasks] = useState([])
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   useEffect(() => {
     Promise.all([api.getTasks(), api.getProjects()])
       .then(([taskData, projectData]) => { setTasks(taskData); setProjects(projectData) })
+      .catch(() => setError('We could not load the dashboard. Check that the API is running.'))
       .finally(() => setLoading(false))
   }, [])
+
+  if (error) return <div className="page-content"><div className="form-error" role="alert">{error}</div></div>
 
   const completed = tasks.filter((task) => task.status === 'Done').length
   const inProgress = tasks.filter((task) => task.status === 'In progress').length
