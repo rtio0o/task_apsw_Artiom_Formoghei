@@ -22,7 +22,7 @@ I checked the app in the browser and used the REST API through the app. The star
 | 05: View project opens the dashboard | [#5](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/5) | Fixed and checked |
 | 06: A task title can contain only spaces | [#6](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/6) | Fixed and checked |
 | 07: Sidebar task count stays at seven | [#7](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/7) | Fixed and checked |
-| 08: Changing a task project breaks its project link | [#8](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/8) | Open |
+| 08: Changing a task project breaks its project link | [#8](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/8) | Fixed and checked |
 | 09: Add task forgets the current project | [#9](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/9) | Open |
 | 10: Dashboard and header show a fixed date | [#10](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/10) | Open |
 
@@ -95,8 +95,8 @@ I checked the app in the browser and used the REST API through the app. The star
 - Steps: Edit a test task, select Mobile app launch, save and reload.
 - Before: No project is shown and the task is missing from the project page.
 - Expected: The selected project and its task list should include the task.
-- Fix: Not applied yet.
-- Test: Not checked after a fix yet.
+- Fix: Save projectId as a number when editing, like the create form does.
+- Test: Passed in the browser: changed a test task to Mobile app launch, saved and reloaded. The project link works and its list includes the task. db.json stores projectId as number 2.
 
 ### Bug 09: Add task forgets the current project
 
