@@ -21,7 +21,7 @@ I checked the app in the browser and used the REST API through the app. The star
 | 04: Searching for a person depends on letter case | [#4](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/4) | Fixed and checked |
 | 05: View project opens the dashboard | [#5](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/5) | Fixed and checked |
 | 06: A task title can contain only spaces | [#6](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/6) | Fixed and checked |
-| 07: Sidebar task count stays at seven | [#7](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/7) | Open |
+| 07: Sidebar task count stays at seven | [#7](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/7) | Fixed and checked |
 | 08: Changing a task project breaks its project link | [#8](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/8) | Open |
 | 09: Add task forgets the current project | [#9](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/9) | Open |
 | 10: Dashboard and header show a fixed date | [#10](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/10) | Open |
@@ -86,8 +86,8 @@ I checked the app in the browser and used the REST API through the app. The star
 - Steps: Create a test task and compare the task list with the desktop sidebar.
 - Before: The list shows 8 tasks, but the sidebar still shows 7.
 - Expected: Both counters should show the current number of tasks.
-- Fix: Not applied yet.
-- Test: Not checked after a fix yet.
+- Fix: Load the count from the API and refresh it after task changes.
+- Test: Passed in the desktop browser: the sidebar shows 8 after reload and updates to 9 after creating another temporary task, matching the table.
 
 ### Bug 08: Changing a task project breaks its project link
 
