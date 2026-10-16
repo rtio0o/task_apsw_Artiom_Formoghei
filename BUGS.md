@@ -2,7 +2,7 @@
 
 Date: October 16, 2026.
 
-I checked the app in the browser and used the REST API through the app. The starting data has 7 tasks and 3 projects.
+We checked the app in the browser and used the REST API through the app. The starting data has 7 tasks and 3 projects.
 
 ## Environment
 

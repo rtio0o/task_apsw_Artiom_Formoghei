@@ -1,6 +1,11 @@
 # TaskFlow evaluation project
 
-TaskFlow is a React app for managing team tasks and projects. This is my solution for the practical web programming evaluation.
+TaskFlow is a React app for managing team tasks and projects. This is our solution for the practical web programming evaluation.
+
+## Students
+
+- Artiom Formoghei
+- Osoianu_Vladimir
 
 ## Assignment
 
