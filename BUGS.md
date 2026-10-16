@@ -25,6 +25,7 @@ I checked the app in the browser and used the REST API through the app. The star
 | 08: Changing a task project breaks its project link | [#8](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/8) | Fixed and checked |
 | 09: Add task forgets the current project | [#9](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/9) | Fixed and checked |
 | 10: Dashboard and header show a fixed date | [#10](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/10) | Fixed and checked |
+| 11: Deleting a task returns to the dashboard | [#12](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/12) | Fixed and checked |
 
 ### Bug 01: Dashboard View all opens the wrong page
 
@@ -115,6 +116,15 @@ I checked the app in the browser and used the REST API through the app. The star
 - Expected: Both should show the current local date.
 - Fix: Format the current date in English instead of keeping a fixed string.
 - Test: Passed in the desktop browser after reload: the header shows Friday, October 16 and the dashboard shows Friday, October 16, 2026. Both use the local date.
+
+### Bug 11: Deleting a task returns to the dashboard
+
+- Issue: [#12](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/12)
+- Steps: Delete an approved temporary task from its details page.
+- Before: The task is removed but the app opens /task, then returns to the dashboard.
+- Expected: Return to /tasks after deletion.
+- Fix: Change the destination after successful deletion to /tasks.
+- Test: Passed in the browser: deleted the two remaining approved test tasks. Each deletion returned to /tasks and updated the sidebar and list. Reload shows the 7 original tasks.
 
 ## Other assignment work
 
