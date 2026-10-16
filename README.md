@@ -1,171 +1,99 @@
-# TaskFlow — proiect de evaluare
+# TaskFlow evaluation project
 
-TaskFlow este o aplicație React pentru gestionarea proiectelor și sarcinilor unei echipe. Repository-ul este folosit pentru o evaluare practică la disciplina **Asistență pentru programarea site-urilor web**.
+TaskFlow is a React app for managing team tasks and projects. This is our solution for the practical web programming evaluation.
 
-## Scopul evaluării
+## Students
 
-Pornind de la aplicația existentă, fiecare student trebuie să:
+- Artiom Formoghei
+- Osoianu_Vladimir
 
-1. investigheze aplicația și să identifice **10 bug-uri/erori**;
-2. reproducă și să corecteze fiecare problemă;
-3. implementeze funcționalitatea suplimentară descrisă mai jos;
-4. verifice aplicația și să documenteze modificările;
-5. trimită soluția printr-un Pull Request către repository-ul personal derivat din proiectul inițial.
+## Assignment
 
-Nu modificați direct repository-ul cadrului didactic. Lucrați în propriul fork.
+- Find and fix 10 bugs in the starter app.
+- Add filtering by task priority.
+- Check CRUD operations and navigation.
+- Document the changes and tests.
+- Use a work branch, clear commits and a Pull Request in the personal fork.
 
-## Tehnologii
+The original 10 bugs and two more problems found during the final checks are listed in [BUGS.md](BUGS.md). The test results are in [TESTING.md](TESTING.md).
 
-- React + Vite
-- React Router
-- JSON Server ca API REST local
-- Lucide React pentru pictograme
-- CSS responsive, fără framework CSS suplimentar
+## Requirements
 
-## Cerințe tehnice
+- Node.js 18+ and npm
+- Git
 
-- Node.js 18+ și npm instalate.
-- Git instalat.
-- Un cont GitHub.
+The app uses React, Vite, React Router, JSON Server, Lucide icons and plain CSS.
 
-## Instalare și pornire
+## Run locally
 
-Clonați propriul fork, apoi instalați dependențele:
+Install the dependencies:
 
 ```bash
 npm install
 ```
 
-Porniți API-ul într-un terminal:
+Open two terminals in the project folder. Start the REST API in the first one:
 
 ```bash
 npm run api
 ```
 
-API-ul va fi disponibil la `http://localhost:3001`.
+The API runs at http://localhost:3001. It reads and updates `db.json`.
 
-Porniți aplicația într-un al doilea terminal:
+Start the React app in the second terminal:
 
 ```bash
 npm run dev
 ```
 
-Deschideți URL-ul local afișat de Vite, de regulă `http://localhost:5173`.
+Open the Vite address, normally http://localhost:5173. Keep both terminals running.
 
-Pentru verificarea build-ului:
+Build the app:
 
 ```bash
 npm run build
 ```
 
-> API-ul trebuie să ruleze separat de serverul Vite. Datele de test se află în `db.json`; operațiile de creare, editare și ștergere modifică acest fișier prin JSON Server.
+## Using the app
 
-## Funcționalități existente
+- Overview shows task statistics and links to recent tasks.
+- Tasks supports searching by task title or assignee, filtering by status and priority, and clearing all filters.
+- A task can be created, opened, edited and deleted through the REST API.
+- Projects shows the tasks linked to each project.
+- Add task on a project page selects that project in the new task form.
 
-- Dashboard cu statistici și sarcini recente.
-- Listă de sarcini cu căutare și filtre.
-- Vizualizarea detaliilor unei sarcini.
-- Crearea, editarea și ștergerea sarcinilor prin API.
-- Listă de proiecte și pagină de detalii a proiectului.
-- Navigare între pagini prin React Router.
-- Date inițiale pentru testare în `db.json`.
+Priority choices are All priorities, Low, Medium and High. Search, status and priority work together. The footer shows the matching count, and an empty result shows No tasks found.
 
-Unele comportamente ale aplicației nu funcționează corect intenționat. Investigați aplicația prin utilizare, inspectarea codului și verificarea cererilor API.
+## Code structure
 
-## Funcționalitatea suplimentară de implementat
+- `src/App.jsx` connects the routes and shared layout data.
+- `src/pages/` loads API data and keeps page state and save/delete handlers.
+- `src/components/layout/` contains the sidebar and topbar.
+- `src/components/dashboard/` contains the welcome banner, statistics, recent tasks and progress card.
+- `src/components/tasks/` contains the filters, table, table row, task overview and action buttons.
+- `src/components/projects/` contains the project card and project task list.
+- `TaskForm`, the badges, `WorkspaceDate` and `ProgressBar` are shared components.
 
-### Filtrare și organizare după prioritate
+Pages pass data and event handlers to the components through props. This keeps API requests and page state separate from the larger blocks of markup.
 
-Implementați o opțiune completă de filtrare a sarcinilor după prioritate: **Low, Medium, High**.
+JavaScript, JSX and CSS use the same formatting settings from `.prettierrc.json`.
 
-Criterii de acceptare:
-
-- utilizatorul poate selecta o prioritate sau „Toate prioritățile”;
-- filtrul funcționează împreună cu căutarea și filtrul după status, fără ca un criteriu să îl anuleze pe celălalt;
-- numărul sarcinilor afișate corespunde rezultatului filtrat;
-- starea goală este afișată când nu există rezultate;
-- controlul are etichetă accesibilă și stil vizual coerent cu aplicația;
-- filtrele pot fi resetate ușor.
-
-Nu este suficient să adăugați doar un element vizual: filtrarea trebuie să funcționeze efectiv.
-
-## Flux GitHub obligatoriu
-
-### 1. Fork și clonare
-
-1. Deschideți repository-ul inițial furnizat de cadrul didactic.
-2. Apăsați **Fork** pentru a crea o copie în contul propriu.
-3. Clonați fork-ul:
+Check formatting:
 
 ```bash
-git clone https://github.com/USERNAME/taskflow-evaluare.git
-cd taskflow-evaluare
-npm install
+npx --yes prettier@3.6.2 --check src .prettierrc.json
 ```
 
-Înlocuiți `USERNAME` cu numele contului vostru GitHub.
-
-### 2. Creați un branch de lucru
+Apply formatting:
 
 ```bash
-git checkout -b feature/fix-taskflow
+npx --yes prettier@3.6.2 --write src .prettierrc.json
 ```
 
-Lucrați pe acest branch, nu direct pe `main`.
+## GitHub work
 
-### 3. Salvați modificările prin commit-uri clare
+Repository: [rtio0o/task_apsw_Artiom_Formoghei](https://github.com/rtio0o/task_apsw_Artiom_Formoghei).
 
-Exemple de mesaje de commit:
+The work branch is `feature/fix-taskflow`. Each bug has a GitHub Issue. Each fix was checked before making its commit, and the commit links to its Issue. The Pull Request targets `master` in this fork.
 
-```bash
-git add .
-git commit -m "fix: correct task status filtering"
-git commit -m "fix: validate task form"
-git commit -m "feat: add priority filter"
-```
-
-Fiecare commit trebuie să reprezinte o schimbare logică. Nu este obligatoriu să folosiți exact aceste mesaje, dar mesajele trebuie să fie explicite.
-
-### 4. Publicați branch-ul
-
-```bash
-git push -u origin feature/fix-taskflow
-```
-
-### 5. Deschideți Pull Request
-
-Din GitHub, creați un Pull Request din branch-ul de lucru către `main` din propriul fork. Dacă cadrul didactic solicită explicit un PR către repository-ul inițial, selectați repository-ul cadrului didactic ca bază.
-
-Titlu recomandat: `Evaluare TaskFlow — Nume Prenume`
-
-În descriere includeți:
-
-- lista celor 10 bug-uri identificate;
-- pașii prin care ați reprodus fiecare problemă;
-- explicația soluției aplicate;
-- descrierea funcționalității noi;
-- verificările manuale și comenzile de testare executate;
-- eventuale limitări rămase.
-
-## Livrabile
-
-- Fork GitHub cu istoricul commit-urilor.
-- Branch de lucru.
-- Pull Request completat.
-- Cod funcțional și formatat.
-- Descrierea celor 10 bug-uri și a soluțiilor.
-- Funcționalitatea suplimentară implementată.
-- Build fără erori.
-
-## Reguli de lucru
-
-- Nu eliminați funcționalități existente pentru a evita repararea lor.
-- Nu înlocuiți API-ul cu date hardcodate în componente.
-- Nu includeți fișierele `node_modules` sau `dist` în Git.
-- Testați și scenariile cu liste goale, date invalide și răspunsuri API eșuate.
-- Codul trebuie să fie lizibil și împărțit logic în componente.
-- Fiecare student trebuie să lucreze individual și să poată explica propriile modificări.
-
-## Criterii de evaluare
-
-Baremul detaliat este comunicat de cadrul didactic. Evaluarea ia în considerare corectitudinea remedierilor, calitatea implementării, utilizarea API-ului, navigarea, testarea și calitatea Pull Request-ului.
+The original sample data is kept in the submitted code. Temporary tasks used for testing were removed. `node_modules` and `dist` are ignored by Git.

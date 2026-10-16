@@ -1,19 +1,16 @@
-# Template pentru jurnalul de testare
+# Test log template
 
-Copiați acest șablon în Pull Request și completați-l. Nu includeți parole sau token-uri.
+## Environment
 
-## Mediu
-- Sistem de operare:
-- Versiune Node.js (`node -v`):
+- Operating system:
+- Node.js version:
 - Browser:
-- Comenzi pornite:
+- Commands used:
 
-## Probleme identificate și remediate
+## Bug fixes
 
-Pentru fiecare problemă folosiți un rând separat:
-
-| Nr. | Pași de reproducere | Comportament observat | Comportament așteptat | Soluție aplicată | Verificare |
-|---|---|---|---|---|---|
+| No. | Steps to reproduce | Before | Expected | Fix | Check after the fix |
+| --- | --- | --- | --- | --- | --- |
 | 1 | | | | | |
 | 2 | | | | | |
 | 3 | | | | | |
@@ -25,16 +22,22 @@ Pentru fiecare problemă folosiți un rând separat:
 | 9 | | | | | |
 | 10 | | | | | |
 
-## Funcționalitate nouă
-- Ce am implementat:
-- Cum se folosește:
-- Cum am verificat criteriile de acceptare:
+## Priority filtering
 
-## Verificări finale
-- [ ] `npm run build`
-- [ ] CRUD verificat prin interfață
-- [ ] Navigarea între pagini verificată
-- [ ] Căutarea și filtrele verificate împreună
-- [ ] Scenariu fără rezultate verificat
-- [ ] Formular cu date invalide verificat
-- [ ] PR descrie modificările și testele
+- What changed:
+- How to use it:
+- Search and status combinations checked:
+- Empty state and reset checked:
+
+## Final checks
+
+- [ ] Build passes with npm run build
+- [ ] Create, read, update and delete checked
+- [ ] Page navigation checked
+- [ ] Search and filters checked together
+- [ ] Empty results and invalid form data checked
+- [ ] Failed API requests checked
+- [ ] Original sample data restored
+- [ ] Pull Request describes the changes and checks
+
+Do not include passwords or tokens in this log.

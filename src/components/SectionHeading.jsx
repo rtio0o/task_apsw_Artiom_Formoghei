@@ -9,7 +9,12 @@ export default function SectionHeading({ eyebrow, title, description, action, to
         <h1>{title}</h1>
         {description && <p className="page-description">{description}</p>}
       </div>
-      {action && <Link className="button button-primary" to={to}>{action}<ArrowRight size={16} /></Link>}
+      {action && (
+        <Link className="button button-primary" to={to}>
+          {action}
+          <ArrowRight size={16} />
+        </Link>
+      )}
     </div>
   )
 }

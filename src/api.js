@@ -16,7 +16,8 @@ export const api = {
   getTasks: () => request('/tasks?_sort=dueDate'),
   getTask: (id) => request(`/tasks/${id}`),
   createTask: (task) => request('/tasks', { method: 'POST', body: JSON.stringify(task) }),
-  updateTask: (id, task) => request(`/tasks/${id}`, { method: 'PATCH', body: JSON.stringify(task) }),
+  updateTask: (id, task) =>
+    request(`/tasks/${id}`, { method: 'PATCH', body: JSON.stringify(task) }),
   deleteTask: (id) => request(`/tasks/${id}`, { method: 'DELETE' }),
   getProjects: () => request('/projects'),
   getProject: (id) => request(`/projects/${id}`),
