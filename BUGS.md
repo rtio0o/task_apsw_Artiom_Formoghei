@@ -20,7 +20,7 @@ I checked the app in the browser and used the REST API through the app. The star
 | 03: In progress filter hides matching tasks | [#3](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/3) | Fixed and checked |
 | 04: Searching for a person depends on letter case | [#4](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/4) | Fixed and checked |
 | 05: View project opens the dashboard | [#5](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/5) | Fixed and checked |
-| 06: A task title can contain only spaces | [#6](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/6) | Open |
+| 06: A task title can contain only spaces | [#6](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/6) | Fixed and checked |
 | 07: Sidebar task count stays at seven | [#7](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/7) | Open |
 | 08: Changing a task project breaks its project link | [#8](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/8) | Open |
 | 09: Add task forgets the current project | [#9](https://github.com/rtio0o/task_apsw_Artiom_Formoghei/issues/9) | Open |
@@ -77,8 +77,8 @@ I checked the app in the browser and used the REST API through the app. The star
 - Steps: Create a task with three spaces as its title and a valid due date.
 - Before: The task is saved with a visually empty title.
 - Expected: The form should show a title validation error.
-- Fix: Not applied yet.
-- Test: Not checked after a fix yet.
+- Fix: Trim the title before checking and saving it.
+- Test: Passed in the browser with a valid date: empty, one-space and three-space titles are rejected. A normal title saves successfully with surrounding spaces removed.
 
 ### Bug 07: Sidebar task count stays at seven
 
